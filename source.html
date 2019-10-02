@@ -1,0 +1,31 @@
+<html>
+<body>
+	<script src = "main.js"></script>
+	<script src = "square.js"></script>
+	<script src = "click.js"></script>
+	<script src = "mouse.js"></script>
+	<script>
+		function reload(p){
+			pos = {
+				x : 0,
+				y : 0
+			};
+			lastPos = {
+				x : 0,
+				y : 0
+			};
+			bombRate = p;
+			chunks = [];
+			chunks.push(new chunk(0, 0));
+			for(let i = 6; i <= 8; i++){
+				for(let j = 6; j <= 8; j++){
+					chunks[0].chunk[i][j].bomb = 0;
+				}
+			}
+			chunks[0].breakClick(7 * squareSize, 7 * squareSize);
+		}
+		reload(0.20);
+		setInterval(update, 20);
+	</script>
+</body>
+</html>
